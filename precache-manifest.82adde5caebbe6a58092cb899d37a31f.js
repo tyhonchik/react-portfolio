@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/react-portfolio/static/media/roboto-100.9a8a1f8c.woff2"
   },
   {
-    "revision": "c0cc9c92fb877993ea6d421c31d33e09",
-    "url": "/react-portfolio/static/media/roboto-300.c0cc9c92.woff2"
-  },
-  {
     "revision": "ece6673e477b4d7aca12f04dace5ed60",
     "url": "/react-portfolio/static/media/roboto-400.ece6673e.woff2"
+  },
+  {
+    "revision": "c0cc9c92fb877993ea6d421c31d33e09",
+    "url": "/react-portfolio/static/media/roboto-300.c0cc9c92.woff2"
   },
   {
     "revision": "2e17a64836c0412759543f90460d0ed1",

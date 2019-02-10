@@ -7,7 +7,7 @@
   "runtime~main.js": "/react-portfolio/static/js/runtime~main.f8926043.js",
   "runtime~main.js.map": "/react-portfolio/static/js/runtime~main.f8926043.js.map",
   "static/media/ysh1r.png": "/react-portfolio/static/media/ysh1r.49a7416d.png",
-  "static/media/base.scss": "/react-portfolio/static/media/roboto-300.c0cc9c92.woff2",
+  "static/media/base.scss": "/react-portfolio/static/media/roboto-400.ece6673e.woff2",
   "static/media/co1.png": "/react-portfolio/static/media/co1.9bcef66b.png",
   "static/media/code.png": "/react-portfolio/static/media/code.bea8a8ff.png",
   "static/media/crm_1.png": "/react-portfolio/static/media/crm_1.a28deed9.png",
@@ -18,6 +18,6 @@
   "static/media/whnuc.png": "/react-portfolio/static/media/whnuc.74084588.png",
   "static/css/main.4f5fcaeb.chunk.css.map": "/react-portfolio/static/css/main.4f5fcaeb.chunk.css.map",
   "index.html": "/react-portfolio/index.html",
-  "precache-manifest.69b18a1a3c1bb6286f5ed0f58c979b6b.js": "/react-portfolio/precache-manifest.69b18a1a3c1bb6286f5ed0f58c979b6b.js",
+  "precache-manifest.82adde5caebbe6a58092cb899d37a31f.js": "/react-portfolio/precache-manifest.82adde5caebbe6a58092cb899d37a31f.js",
   "service-worker.js": "/react-portfolio/service-worker.js"
 }
