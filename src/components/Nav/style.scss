@@ -1,0 +1,89 @@
+@import '../../assets/styles/breakpoints';
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:1100;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include breakpoint-small-down {
+    height: 4rem;
+  }
+
+  .magic-wand {
+    cursor: pointer;
+    justify-self: flex-start;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .magic-text {
+      text-align: center;
+      font-size: 0.5rem;
+      padding-top: 0.25rem;
+    }
+
+    &.bounce-xy {
+      animation: bounce-xy 2s infinite;
+    }
+
+    @keyframes bounce-xy {
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+      40% {
+        transform: translateY(2px) translateX(2px);
+      }
+      60% {
+        transform: translateY(1px) translateX(1px);
+      }
+    }
+  }
+  
+  .menu {
+    margin-right: 1rem;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    &__item {
+      font-size: 1.5rem;
+      position: relative;
+      text-decoration: none;
+      display: inline-block;
+      margin:0 10px;
+      color: #777;
+      padding: 0 1px;
+      transition: color ease 0.3s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        bottom: 0;
+        background-color: rgb(96, 125, 139);
+        transition: all ease 0.3s;
+      }
+
+      &:hover {
+        color: white;
+        
+        &::after {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

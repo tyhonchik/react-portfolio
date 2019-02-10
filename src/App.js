@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import AboutPage from './pages/AboutPage';
+import PortfolioPage from './pages/PortfolioPage';
+import ProjectPage from './pages/ProjectPage';
+import ThemeSwitcher from './components/ThemeSwitcher';
+import PageShell from './components/PageShell';
+import Footer from './components/Footer';
+import { projects } from './components/PortfolioItem/projects';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router className="dev-landing-page">
+        <ThemeSwitcher>
+          <Switch>
+            <Route exact path="/" component={PageShell(LandingPage)} />
+            <Route path="/about" component={PageShell(AboutPage)} />
+            <Route path="/projects" component={PageShell(PortfolioPage)} />
+            <Route path="/project/:key" render={props => ( 
+              <ProjectPage {...props} projects={[...projects]} /> 
+            )} />
+          </Switch>
+          <Footer />
+        </ThemeSwitcher>
+      </Router>
     );
   }
 }
