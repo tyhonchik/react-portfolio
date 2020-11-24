@@ -12,7 +12,7 @@ import {projects} from './components/PortfolioItem/projects';
 class App extends Component {
     render() {
         return (
-            <Router className="dev-landing-page">
+            <Router basename="/react-portfolio" className="dev-landing-page">
                 <ThemeSwitcher>
                     <Switch>
                         <Route exact path="/" component={PageShell(LandingPage)} />

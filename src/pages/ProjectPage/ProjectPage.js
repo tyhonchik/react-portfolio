@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Nav from '../../components/Nav';
 import './ProjectPage.scss';
 
 const projectPage = (props, context) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const {
         theme: {bgPrimary, colorPrimary},
     } = context;
@@ -15,7 +19,7 @@ const projectPage = (props, context) => {
     }
 
     function importAll(r) {
-        return r.keys().map(r);
+        return r.keys().map(r).map(item => item.default);
     }
 
     const images = importAll(require.context('../../assets/images', false, /\.(png|jpe?g|svg)$/));
