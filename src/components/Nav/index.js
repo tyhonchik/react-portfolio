@@ -1,3 +1,3 @@
-import Nav from './Nav';
+import {default} from './Nav';
 
 export default Nav;

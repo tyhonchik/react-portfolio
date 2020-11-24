@@ -5,14 +5,13 @@ import Nav from '../../components/Nav';
 import './ProjectPage.scss';
 
 const projectPage = (props, context) => {
-    const { theme: { bgPrimary, colorPrimary } } = context;
+    const {
+        theme: {bgPrimary, colorPrimary},
+    } = context;
 
     let project = null;
     if (props.match.params.key) {
-        props.projects
-            .filter(el => el.key === props.match.params.key)
-            .map((el) => (project = el)
-            )
+        props.projects.filter((el) => el.key === props.match.params.key).map((el) => (project = el));
     }
 
     function importAll(r) {
@@ -24,38 +23,42 @@ const projectPage = (props, context) => {
     const renderedImages = [];
     const text = [];
 
-    project.images.map((img) => (images
-        .filter(el => el.indexOf(img) > -1)
-        .map((el) => (
-            renderedImages.push(
-                <div key={img}><img src={el} alt={project.title} className="project-image__next" /></div>
+    project.images.map((img) =>
+        images
+            .filter((el) => el.indexOf(img) > -1)
+            .map((el) =>
+                renderedImages.push(
+                    <div key={img}>
+                        <img src={el} alt={project.title} className="project-image__next" />
+                    </div>
+                )
             )
-        ))
-    ));
+    );
 
-    project.fullDesc.map((el, index) => text.push(
-        <p key={"p_" + index} style={el.style}>
-            {el.text}
-        </p>
-    ))
-
+    project.fullDesc.map((el, index) =>
+        text.push(
+            <p key={'p_' + index} style={el.style}>
+                {el.text}
+            </p>
+        )
+    );
 
     return (
-        <div style={{ backgroundColor: bgPrimary }} className="project-page">
+        <div style={{backgroundColor: bgPrimary}} className="project-page">
             <Nav />
-            <main style={{ color: colorPrimary }}>
+            <main style={{color: colorPrimary}}>
                 <ReactCSSTransitionGroup
                     transitionAppear={true}
                     transitionAppearTimeout={600}
                     transitionEnterTimeout={600}
                     transitionLeaveTimeout={200}
-                    transitionName='loadProject'
+                    transitionName="loadProject"
                 >
                     <div className="project-wrapper">
                         <div className="project-header">
-
-                            <span className="goBackButton"
-                                onClick={e => {
+                            <span
+                                className="goBackButton"
+                                onClick={(e) => {
                                     e.preventDefault();
                                     props.history.goBack();
                                 }}
@@ -65,14 +68,9 @@ const projectPage = (props, context) => {
                             <h1>{project.title}</h1>
                         </div>
                         <div className="project-body">
-                            <div className="project-description">
-                                {text}
-                            </div>
-                            <div className="project-images">
-                                {renderedImages}
-                            </div>
+                            <div className="project-description">{text}</div>
+                            <div className="project-images">{renderedImages}</div>
                         </div>
-
                     </div>
                 </ReactCSSTransitionGroup>
             </main>
@@ -81,7 +79,7 @@ const projectPage = (props, context) => {
 };
 
 projectPage.contextTypes = {
-    theme: PropTypes.any
+    theme: PropTypes.any,
 };
 
 export default projectPage;

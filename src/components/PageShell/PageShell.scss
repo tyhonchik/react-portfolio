@@ -1,17 +1,15 @@
-.loadComponent{
+.loadComponent {
     &-appear {
         opacity: 0;
-        transform: translateY(-50px)
+        transform: translateY(-50px);
     }
     &-appear.loadComponent-appear-active {
         opacity: 1;
         transition: all 0.6s ease-in-out;
-        transform: translateY(0px)
-        
+        transform: translateY(0px);
     }
     &-enter {
         opacity: 0;
-        
     }
     &-enter.loadComponent-enter-active {
         opacity: 1;
@@ -19,16 +17,14 @@
         transition: all 0.6s ease-in-out 0.4s;
     }
     &-leave {
-        opacity: 1.0;
-        position:absolute;
-        transform: translateY(150px)
-        
+        opacity: 1;
+        position: absolute;
+        transform: translateY(150px);
     }
     &-leave.loadComponent-leave-active {
         opacity: 0;
         transition: all 1.6s ease-in-out;
-        position:absolute;
-        transform: translateY(50px)
-        
+        position: absolute;
+        transform: translateY(50px);
     }
 }
